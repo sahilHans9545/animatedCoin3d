@@ -1,0 +1,412 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Righteous|Sigmar+One);
+
+        body {
+            background-color: #353535;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        h1 {
+            font-family: "Righteous";
+            color: white;
+            text-align: center;
+            position: relative;
+            top: 10px;
+        }
+
+        .container_coin {
+            height: 160px;
+            width: 160px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -80px;
+            margin-left: -80px;
+        }
+
+        .coin {
+            height: 160px;
+            width: 160px;
+            position: absolute;
+            -webkit-transform-style: preserve-3d;
+            -webkit-transform-origin: 50%;
+            -webkit-animation: spin 1s infinite;
+            -webkit-animation-timing-function: linear;
+        }
+
+        .coin .back {
+            transform: rotateX(180deg);
+        }
+
+        .coin .front,
+        .coin .back {
+            position: absolute;
+            height: 160px;
+            width: 160px;
+            border-radius: 50%;
+            background-size: cover;
+
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: black;
+
+        }
+
+        .coin .front {
+            -webkit-transform: translateZ(8px);
+        }
+
+        .coin .back {
+            -webkit-transform: translateZ(-8px) rotateY(180deg);
+        }
+
+        .coin .side {
+            -webkit-transform: translateX(72px);
+            -webkit-transform-style: preserve-3d;
+            -webkit-backface-visibility: hidden;
+        }
+
+        .coin .side .circle {
+            height: 160px;
+            width: 16px;
+            position: absolute;
+            -webkit-transform-style: preserve-3d;
+            -webkit-backface-visibility: hidden;
+        }
+
+        .coin .side .circle:before,
+        .coin .side .circle:after {
+            content: "";
+            display: block;
+            height: 15.6827424527px;
+            width: 16px;
+            position: absolute;
+            -webkit-transform: rotateX(84.375deg);
+            background: #e0d530;
+        }
+
+        .coin .side .circle:before {
+            -webkit-transform-origin: top center;
+        }
+
+        .coin .side .circle:after {
+            bottom: 0;
+            -webkit-transform-origin: center bottom;
+        }
+
+        .coin .side .circle:nth-child(16) {
+            -webkit-transform: rotateY(90deg) rotateX(180deg);
+        }
+
+        .coin .side .circle:nth-child(15) {
+            -webkit-transform: rotateY(90deg) rotateX(168.75deg);
+        }
+
+        .coin .side .circle:nth-child(14) {
+            -webkit-transform: rotateY(90deg) rotateX(157.5deg);
+        }
+
+        .coin .side .circle:nth-child(13) {
+            -webkit-transform: rotateY(90deg) rotateX(146.25deg);
+        }
+
+        .coin .side .circle:nth-child(12) {
+            -webkit-transform: rotateY(90deg) rotateX(135deg);
+        }
+
+        .coin .side .circle:nth-child(11) {
+            -webkit-transform: rotateY(90deg) rotateX(123.75deg);
+        }
+
+        .coin .side .circle:nth-child(10) {
+            -webkit-transform: rotateY(90deg) rotateX(112.5deg);
+        }
+
+        .coin .side .circle:nth-child(9) {
+            -webkit-transform: rotateY(90deg) rotateX(101.25deg);
+        }
+
+        .coin .side .circle:nth-child(8) {
+            -webkit-transform: rotateY(90deg) rotateX(90deg);
+        }
+
+        .coin .side .circle:nth-child(7) {
+            -webkit-transform: rotateY(90deg) rotateX(78.75deg);
+        }
+
+        .coin .side .circle:nth-child(6) {
+            -webkit-transform: rotateY(90deg) rotateX(67.5deg);
+        }
+
+        .coin .side .circle:nth-child(5) {
+            -webkit-transform: rotateY(90deg) rotateX(56.25deg);
+        }
+
+        .coin .side .circle:nth-child(4) {
+            -webkit-transform: rotateY(90deg) rotateX(45deg);
+        }
+
+        .coin .side .circle:nth-child(3) {
+            -webkit-transform: rotateY(90deg) rotateX(33.75deg);
+        }
+
+        .coin .side .circle:nth-child(2) {
+            -webkit-transform: rotateY(90deg) rotateX(22.5deg);
+        }
+
+        .coin .side .circle:nth-child(1) {
+            -webkit-transform: rotateY(90deg) rotateX(11.25deg);
+        }
+
+        .coin .front {
+            background: #fef236;
+        }
+
+        .coin .back {
+            background: #fef236;
+
+
+        }
+
+        @-webkit-keyframes spin {
+            from {
+                transform: rotate3d(0deg, 0deg, 0deg);
+            }
+
+            to {
+                /* -webkit-transform: rotate3d(180deg, 180deg); */
+                transform: rotate3d(180deg, 180deg, 0deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>3D COIN CSS3</h1>
+    <div class="container_coin">
+        <div class="coin">
+            <div class="front">Heads</div>
+            <div class="back">Tails</div>
+            <div class="side">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html> -->
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            background: black;
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        .coin {
+            font-size: 150px;
+            width: 0.1em;
+            height: 1em;
+            background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2E5ODgwNSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzE0MTAwMSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+            background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #a98805), color-stop(100%, #141001));
+            background: -moz-linear-gradient(#a98805, #141001);
+            background: -webkit-linear-gradient(#a98805, #141001);
+            background: linear-gradient(#a98805, #141001);
+            margin: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transform: rotateY(90deg) rotateX(30deg);
+            /* transform: scale3d(1.5, 1.5, 1.5) translateZ(70px) translateX(-20px) rotateX(180deg) rotateY(300deg); */
+            -webkit-animation: flip 1.4s 1 linear;
+            animation: flip 1.8s 1 linear;
+            -moz-transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
+
+            transform-style: preserve-3d;
+        }
+
+        .coin .side {
+            /* transform: rotateY(0deg) !important; */
+            z-index: 1111;
+            border: 10px solid #a98805;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .coin .side,
+        .coin:before,
+        .coin:after {
+            content: "";
+            position: absolute;
+            width: 1em;
+            height: 1em;
+            overflow: hidden;
+            background: #DAB007;
+            border-radius: 50%;
+            right: -0.4em;
+            text-align: center;
+            line-height: 1;
+            color: #d0a807;
+            text-shadow: 1px 2px 0 #fbe27f, -1px -2px 0 #463802;
+            -moz-transform: rotateY(-90deg);
+            -ms-transform: rotateY(-90deg);
+            -webkit-transform: rotateY(-90deg);
+            transform: rotateY(-90deg);
+            -moz-backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+
+
+        }
+
+        .coin .tails,
+        .coin:after {
+            left: -0.4em;
+            -moz-transform: rotateY(90deg);
+            -ms-transform: rotateY(90deg);
+            -webkit-transform: rotateY(90deg);
+            transform: rotateY(90deg);
+        }
+
+        .coin:before,
+        .coin:after {
+            background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2E5ODgwNSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzE0MTAwMSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+            background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #a98805), color-stop(100%, #141001));
+            background: -moz-linear-gradient(#a98805, #141001);
+            background: -webkit-linear-gradient(#a98805, #141001);
+            background: linear-gradient(#a98805, #141001);
+            -moz-backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -moz-transform: rotateY(90deg);
+            -ms-transform: rotateY(90deg);
+            -webkit-transform: rotateY(90deg);
+            transform: rotateY(90deg);
+            /* background: repeating-linear-gradient(#ea4336 0, #ea4336 25%, #34a853 25%, #34a853 50%); */
+        }
+
+        .coin:after {
+            -moz-transform: rotateY(-90deg);
+            -ms-transform: rotateY(-90deg);
+            -webkit-transform: rotateY(-90deg);
+            transform: rotateY(-90deg);
+        }
+
+        @-webkit-keyframes rotate {
+            100% {
+                -moz-transform: rotateY(360deg);
+                -ms-transform: rotateY(360deg);
+                -webkit-transform: rotateY(360deg);
+                transform: rotateY(360deg);
+            }
+        }
+
+        @-moz-keyframes rotate {
+            100% {
+                -moz-transform: rotateY(360deg);
+                -ms-transform: rotateY(360deg);
+                -webkit-transform: rotateY(360deg);
+                transform: rotateY(360deg);
+            }
+        }
+
+        @keyframes rotate {
+
+
+            100% {
+                -moz-transform: rotateY(360deg) scale(1);
+                -ms-transform: rotateY(360deg) scale(1);
+                -webkit-transform: rotateY(360deg) scale(1);
+                transform: rotateY(360deg) scale(1);
+            }
+
+
+        }
+
+        @keyframes flip {
+            0% {
+                transform: scale3d(1, 1, 1) translateZ(0) translateX(0px) rotateX(0deg) rotateY(90deg);
+            }
+
+            50% {
+                transform: scale3d(1.5, 1.5, 1.5) translateZ(50px) translateX(-20px) rotateX(180deg) rotateY(360deg);
+            }
+
+            100% {
+                transform: scale3d(1, 1, 1) translateZ(100px) translateX(0px) rotateX(-180deg) rotateY(720deg);
+            }
+        }
+
+        .heads,
+        .tails {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .heads span,
+        .tails span {
+            font-size: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="coin">
+        <div class="side heads"><span> YES</span></div>
+        <div class="side tails"><span>NO</span></div>
+    </div>
+
+</body>
+
+</html>
