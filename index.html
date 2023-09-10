@@ -105,14 +105,14 @@
 
         .heads-animate {
             transform: rotateX(55deg);
-            -webkit-animation: head-coin 4s cubic-bezier(0.65, 0.05, 0.36, 1);
-            animation: head-coin 4s linear;
+            -webkit-animation: head-coin 3s cubic-bezier(0.65, 0.05, 0.36, 1);
+            animation: head-coin 3s linear;
         }
 
         .tails-animate {
             transform: rotateY(180deg) rotateX(-55deg);
-            -webkit-animation: tail-coin 4s cubic-bezier(0.65, 0.05, 0.36, 1);
-            animation: tail-coin 4s linear;
+            -webkit-animation: tail-coin 3s cubic-bezier(0.65, 0.05, 0.36, 1);
+            animation: tail-coin 3s linear;
         }
 
 
@@ -200,18 +200,18 @@
             background: var(--face);
 
             box-shadow: inset 0 0 5px #ffe25a;
+            background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+
         }
 
         .front {
             transform: translate3d(0, 0, 0.4em) rotateY(0);
-            background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
-                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+
         }
 
         .back {
             transform: rotateY(180deg) translate3d(0, 0, 0.4em);
-            background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
-                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
         }
 
         .symbol {
