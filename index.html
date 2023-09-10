@@ -415,21 +415,14 @@
             }
             setTimeout(function () {
                 if (rand % 2 == 0) {
-                    title.innerText = "YES"
-                    // coin.classList.remove("headss-animate")
-                    // coin.classList.remove("tails-animate")
-                    // coin.classList.add("heads-animate")
+                    title.innerText = "YES";
                 }
                 else {
-                    title.innerText = "NO"
-                    // coin.classList.remove("tails-animate")
-                    // coin.classList.remove("headss-animate")
-                    // coin.classList.add("tails-animate")
+                    title.innerText = "NO";
                 }
-                // coin.classList.remove("animate")
                 coin.classList.remove(addClass)
                 roll_button.disabled = false
-            }, 4100)
+            }, 5500)
             setTimeout(() => {
                 coin.classList.add("infiniteMoveCoin")
             }, 7000);
