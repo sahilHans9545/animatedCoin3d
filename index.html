@@ -75,10 +75,10 @@
 
         }
 
-        /* .infiniteMoveCoin {
+        .infiniteMoveCoin {
             -webkit-animation: infiniteRotate 24s 2s linear infinite;
             animation: infiniteRotate 24s 2s linear infinite;
-        } */
+        }
 
 
 
@@ -400,6 +400,7 @@
 
         function toss() {
             coin.classList.remove("infiniteMoveCoin")
+            coin.style.transform = "rotateX(55deg)"
             roll_button.disabled = true
             title.innerText = "Tossing !!"
             rand = Math.floor(Math.random() * 2 + 1)
@@ -408,10 +409,15 @@
             if (rand % 2 == 0) {
                 addClass = "heads-animate"
                 coin.classList.add("heads-animate")
+                coin.style.transform = "rotateX(55deg)";
+
             }
             else {
                 addClass = "tails-animate"
+
                 coin.classList.add("tails-animate")
+                coin.style.transform = "rotateY(180deg) rotateX(-55deg)";
+
             }
             setTimeout(function () {
                 if (rand % 2 == 0) {
@@ -424,9 +430,12 @@
                 if (addClass == "tails-animate") {
                     coin.style.transform = "rotateY(180deg)";
                 }
+                else {
+                    coin.style.transform = "rotateY(0deg)"
+                }
 
                 roll_button.disabled = false
-            }, 4400)
+            }, 5000)
             setTimeout(() => {
                 coin.classList.add("infiniteMoveCoin")
             }, 7000);
