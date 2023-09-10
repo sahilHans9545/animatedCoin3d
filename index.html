@@ -71,6 +71,8 @@
             height: 100%;
             position: relative;
             transform-style: preserve-3d;
+            transition: all 0.4s;
+            /* transform: rotateX(50deg); */
 
         }
 
@@ -97,15 +99,72 @@
         }
 
 
-
-
-
-        .animate {
-            -webkit-animation: spin-coin 1.8s cubic-bezier(0.65, 0.05, 0.36, 1);
-            animation: spin-coin 1.8s linear;
+        .coin {
+            transition: all 0.4s;
         }
 
-        /* cubic-bezier(0.65, 0.05, 0.36, 1) */
+
+        .heads-animate {
+            transform: rotateX(55deg);
+            -webkit-animation: head-coin 4s cubic-bezier(0.65, 0.05, 0.36, 1);
+            animation: head-coin 3s linear;
+        }
+
+        .tails-animate {
+            transform: rotateY(180deg) rotateX(-55deg);
+            -webkit-animation: tail-coin 4s cubic-bezier(0.65, 0.05, 0.36, 1);
+            animation: tail-coin 3s linear;
+        }
+
+
+        @keyframes head-coin {
+            0% {
+                top: 0rem;
+                -webkit-transform: rotateX(45deg);
+                transform: rotateX(45deg) rotateY(0deg);
+            }
+
+            50% {
+                -webkit-transform: rotateX(5000deg);
+                /* transform: rotateX(5000deg) rotateY(30deg); */
+                transform: rotateX(2300deg) rotateY(15deg);
+                top: -9rem;
+            }
+
+            100% {
+                top: 0rem;
+                -webkit-transform: rotateX(45deg);
+                transform: rotateX(55deg) rotateY(0deg);
+            }
+        }
+
+        @keyframes tail-coin {
+            0% {
+                top: 0rem;
+                -webkit-transform: rotateX(45deg);
+                transform: rotateX(45deg) rotateY(0deg);
+            }
+
+            50% {
+                -webkit-transform: rotateX(5000deg);
+                /* transform: rotateX(5000deg) rotateY(30deg); */
+                transform: rotateX(2300deg) rotateY(15deg);
+                top: -9rem;
+            }
+
+            100% {
+                top: 0rem;
+                -webkit-transform: rotateX(45deg);
+                transform: rotateX(180deg) rotateY(0deg);
+            }
+        }
+
+        /* .animate {
+            -webkit-animation: spin-coin 2s cubic-bezier(0.65, 0.05, 0.36, 1);
+            animation: spin-coin 2s linear;
+        } */
+
+
         @keyframes spin-coin {
             0% {
                 top: 0rem;
@@ -116,7 +175,7 @@
             50% {
                 -webkit-transform: rotateX(5000deg);
                 /* transform: rotateX(5000deg) rotateY(30deg); */
-                transform: rotateX(2900deg) rotateY(15deg);
+                transform: rotateX(2300deg) rotateY(15deg);
                 top: -9rem;
             }
 
@@ -345,22 +404,36 @@
             roll_button.disabled = true
             title.innerText = "Tossing !!"
             rand = Math.floor(Math.random() * 2 + 1)
-            coin.classList.add("animate")
+            // coin.classList.add("animate")
+            let addClass;
+            if (rand % 2 == 0) {
+                addClass = "heads-animate"
+                coin.classList.add("heads-animate")
+            }
+            else {
+                addClass = "tails-animate"
+                coin.classList.add("tails-animate")
+            }
             setTimeout(function () {
                 if (rand % 2 == 0) {
                     title.innerText = "YES"
-                    coin.style.transform = "rotateX(55deg)"
+                    // coin.classList.remove("headss-animate")
+                    // coin.classList.remove("tails-animate")
+                    // coin.classList.add("heads-animate")
                 }
                 else {
                     title.innerText = "NO"
-                    coin.style.transform = "rotateY(180deg) rotateX(-55deg)"
+                    // coin.classList.remove("tails-animate")
+                    // coin.classList.remove("headss-animate")
+                    // coin.classList.add("tails-animate")
                 }
-                coin.classList.remove("animate")
+                // coin.classList.remove("animate")
+                coin.classList.remove(addClass)
                 roll_button.disabled = false
-            }, 1500)
+            }, 4100)
             setTimeout(() => {
                 coin.classList.add("infiniteMoveCoin")
-            }, 4000);
+            }, 7000);
         }
     </script>
 
