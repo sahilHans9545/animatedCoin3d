@@ -75,10 +75,10 @@
 
         }
 
-        .infiniteMoveCoin {
+        /* .infiniteMoveCoin {
             -webkit-animation: infiniteRotate 24s 2s linear infinite;
             animation: infiniteRotate 24s 2s linear infinite;
-        }
+        } */
 
 
 
@@ -126,8 +126,8 @@
             50% {
                 -webkit-transform: rotateX(5000deg);
                 /* transform: rotateX(5000deg) rotateY(30deg); */
-                transform: rotateX(1200deg) rotateY(15deg);
-                top: -8rem;
+                transform: rotateX(1250deg) rotateY(15deg);
+                top: -9rem;
             }
 
             100% {
@@ -147,8 +147,8 @@
             50% {
                 -webkit-transform: rotateX(5000deg);
                 /* transform: rotateX(5000deg) rotateY(30deg); */
-                transform: rotateX(1200deg) rotateY(15deg);
-                top: -8rem;
+                transform: rotateX(1250deg) rotateY(15deg);
+                top: -9rem;
             }
 
             100% {
@@ -421,6 +421,10 @@
                     title.innerText = "NO";
                 }
                 coin.classList.remove(addClass)
+                if (addClass == "tails-animate") {
+                    coin.style.transform = "rotateY(180deg)";
+                }
+
                 roll_button.disabled = false
             }, 4400)
             setTimeout(() => {
