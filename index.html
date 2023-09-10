@@ -34,11 +34,14 @@
         .coin {
             --face: #ffd9b3;
             --sign: #c49a44;
-            --circle: #c49a44;
+            /* --circle: #c49a44; */
+            --circle: #211d17;
             --side: #dbb765;
+            /* --side: #d3c99c; */
             --slide: #c49a44;
 
         }
+
 
 
 
@@ -72,8 +75,8 @@
         }
 
         .infiniteMoveCoin {
-            -webkit-animation: infiniteRotate 24s -3s linear infinite;
-            animation: infiniteRotate 24s -3s linear infinite;
+            -webkit-animation: infiniteRotate 24s 2s linear infinite;
+            animation: infiniteRotate 24s 2s linear infinite;
         }
 
 
@@ -95,10 +98,7 @@
 
 
 
-        .bitcoin {
 
-            /* transform: rotateX(50deg); */
-        }
 
         .animate {
             -webkit-animation: spin-coin 1.8s cubic-bezier(0.65, 0.05, 0.36, 1);
@@ -130,7 +130,7 @@
 
 
 
-        .face {
+        .coin-face {
             border-radius: 50%;
             position: absolute;
             left: 0;
@@ -140,14 +140,20 @@
             -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
             background: var(--face);
+
+            box-shadow: inset 0 0 5px #ffe25a;
         }
 
         .front {
             transform: translate3d(0, 0, 0.4em) rotateY(0);
+            background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
         }
 
         .back {
             transform: rotateY(180deg) translate3d(0, 0, 0.4em);
+            background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
         }
 
         .symbol {
@@ -159,6 +165,7 @@
             font-size: 2em;
             font-weight: 700;
             font-family: Sanchez, sans-serif;
+            text-shadow: 1px 2px 0 #fbe27f, -1px -2px 0 #463802;
         }
 
 
@@ -174,7 +181,7 @@
             top: 50%;
         }
 
-        .side {
+        .coin-side {
             width: 0.9em;
             height: 1.74em;
             background: var(--side);
@@ -282,34 +289,34 @@
 
         <div class="coin-container">
             <div class="coin bitcoin infiniteMoveCoin">
-                <div class="face front">
+                <div class="coin-face front">
                     <div class="symbol frontside-text">YES</div>
                     <div class="circle"></div>
                 </div>
-                <div class="face back">
+                <div class="coin-face back">
                     <div class="symbol backside-text">NO</div>
                     <div class="circle"></div>
                 </div>
-                <figure class="side"></figure>
-                <figure class="side"></figure>
-                <figure class="side"></figure>
-                <figure class="side"></figure>
-                <figure class="side"></figure>
-                <figure class="side"></figure>
-                <figure class="side"></figure>
-                <figure class="side"></figure>
-                <figure class="side"></figure>
-                <figure class="side"></figure>
-                <figure class="side"></figure>
-                <figure class="side"></figure>
-                <figure class="side"></figure>
-                <figure class="side"></figure>
-                <figure class="side"></figure>
-                <figure class="side"></figure>
-                <figure class="side"></figure>
-                <figure class="side"></figure>
-                <figure class="side"></figure>
-                <figure class="side"></figure>
+                <figure class="coin-side"></figure>
+                <figure class="coin-side"></figure>
+                <figure class="coin-side"></figure>
+                <figure class="coin-side"></figure>
+                <figure class="coin-side"></figure>
+                <figure class="coin-side"></figure>
+                <figure class="coin-side"></figure>
+                <figure class="coin-side"></figure>
+                <figure class="coin-side"></figure>
+                <figure class="coin-side"></figure>
+                <figure class="coin-side"></figure>
+                <figure class="coin-side"></figure>
+                <figure class="coin-side"></figure>
+                <figure class="coin-side"></figure>
+                <figure class="coin-side"></figure>
+                <figure class="coin-side"></figure>
+                <figure class="coin-side"></figure>
+                <figure class="coin-side"></figure>
+                <figure class="coin-side"></figure>
+                <figure class="coin-side"></figure>
             </div>
 
 
@@ -330,6 +337,7 @@
         const title = document.querySelector("h1")
 
         roll_button.addEventListener("click", toss)
+        coin.addEventListener("click", toss)
         // setTimeout(toss, 500)
 
         function toss() {
