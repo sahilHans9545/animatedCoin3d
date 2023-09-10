@@ -68,16 +68,36 @@
             height: 100%;
             position: relative;
             transform-style: preserve-3d;
+
+        }
+
+        .infiniteMoveCoin {
+            -webkit-animation: infiniteRotate 24s -3s linear infinite;
+            animation: infiniteRotate 24s -3s linear infinite;
         }
 
 
 
 
+        @keyframes infiniteRotate {
+            0% {
+                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            }
+
+            50% {
+                transform: rotateX(1800deg) rotateY(45deg) rotateZ(25deg);
+            }
+
+            100% {
+                transform: rotateX(3600deg) rotateY(0deg) rotateZ(0deg);
+            }
+        }
+
+
 
         .bitcoin {
-            /* -webkit-animation: spinYen 4s -7s ease-in-out infinite;
-            animation: spinYen 4s -7s ease-in-out infinite; */
-            transform: rotateX(50deg);
+
+            /* transform: rotateX(50deg); */
         }
 
         .animate {
@@ -96,16 +116,18 @@
             50% {
                 -webkit-transform: rotateX(5000deg);
                 /* transform: rotateX(5000deg) rotateY(30deg); */
-                transform: rotateX(2900deg) rotateY(30deg);
+                transform: rotateX(2900deg) rotateY(15deg);
                 top: -9rem;
             }
 
             100% {
                 top: 0rem;
                 -webkit-transform: rotateX(45deg);
-                transform: rotateX(45deg) rotateY(-20deg);
+                transform: rotateX(45deg) rotateY(-10deg);
             }
         }
+
+
 
 
         .face {
@@ -259,7 +281,7 @@
     <div class="coin-wrapper">
 
         <div class="coin-container">
-            <div class="coin bitcoin">
+            <div class="coin bitcoin infiniteMoveCoin">
                 <div class="face front">
                     <div class="symbol frontside-text">YES</div>
                     <div class="circle"></div>
@@ -311,6 +333,7 @@
         // setTimeout(toss, 500)
 
         function toss() {
+            coin.classList.remove("infiniteMoveCoin")
             roll_button.disabled = true
             title.innerText = "Tossing !!"
             rand = Math.floor(Math.random() * 2 + 1)
@@ -327,6 +350,9 @@
                 coin.classList.remove("animate")
                 roll_button.disabled = false
             }, 1500)
+            setTimeout(() => {
+                coin.classList.add("infiniteMoveCoin")
+            }, 4000);
         }
     </script>
 
