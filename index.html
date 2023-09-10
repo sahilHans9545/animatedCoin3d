@@ -106,13 +106,13 @@
         .heads-animate {
             transform: rotateX(55deg);
             -webkit-animation: head-coin 3s cubic-bezier(0.65, 0.05, 0.36, 1);
-            animation: head-coin 3.5s linear;
+            animation: head-coin 3s linear;
         }
 
         .tails-animate {
             transform: rotateY(180deg) rotateX(-55deg);
             -webkit-animation: tail-coin 3s cubic-bezier(0.65, 0.05, 0.36, 1);
-            animation: tail-coin 3.5s linear;
+            animation: tail-coin 3s linear;
         }
 
 
@@ -126,8 +126,8 @@
             50% {
                 -webkit-transform: rotateX(5000deg);
                 /* transform: rotateX(5000deg) rotateY(30deg); */
-                transform: rotateX(1500deg) rotateY(15deg);
-                top: -9rem;
+                transform: rotateX(1200deg) rotateY(15deg);
+                top: -8rem;
             }
 
             100% {
@@ -147,8 +147,8 @@
             50% {
                 -webkit-transform: rotateX(5000deg);
                 /* transform: rotateX(5000deg) rotateY(30deg); */
-                transform: rotateX(1500deg) rotateY(15deg);
-                top: -9rem;
+                transform: rotateX(1200deg) rotateY(15deg);
+                top: -8rem;
             }
 
             100% {
@@ -422,7 +422,7 @@
                 }
                 coin.classList.remove(addClass)
                 roll_button.disabled = false
-            }, 5500)
+            }, 4400)
             setTimeout(() => {
                 coin.classList.add("infiniteMoveCoin")
             }, 7000);
