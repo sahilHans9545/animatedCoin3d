@@ -106,13 +106,13 @@
         .heads-animate {
             transform: rotateX(55deg);
             -webkit-animation: head-coin 3s cubic-bezier(0.65, 0.05, 0.36, 1);
-            animation: head-coin 4s linear;
+            animation: head-coin 3.5s linear;
         }
 
         .tails-animate {
             transform: rotateY(180deg) rotateX(-55deg);
             -webkit-animation: tail-coin 3s cubic-bezier(0.65, 0.05, 0.36, 1);
-            animation: tail-coin 4s linear;
+            animation: tail-coin 3.5s linear;
         }
 
 
@@ -422,7 +422,7 @@
                 }
                 coin.classList.remove(addClass)
                 roll_button.disabled = false
-            }, 6500)
+            }, 5500)
             setTimeout(() => {
                 coin.classList.add("infiniteMoveCoin")
             }, 7000);
